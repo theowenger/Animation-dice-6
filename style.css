@@ -1,0 +1,100 @@
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.point {
+	color: white;
+	font-size: 2.5rem;
+}
+.container {
+	width: 200px;
+	height: 200px;
+	perspective: 10000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+}
+.cube {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+	animation: spin 15s infinite linear;
+}
+  .cube:active {
+    animation-play-state: paused;
+  }
+
+.face {
+background: radial-gradient(circle, rgba(53,185,217,1) 0%, rgba(0,212,255,1) 0%, rgba(93,217,122,1) 100%);
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	padding: 30px;
+	border: 1px white solid;
+		display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.front-1 {
+	transform: rotateX(0deg) translateZ(100px);
+}
+.back-6 {
+	transform: rotateX(-180deg) translateZ(100px);
+}
+.top-3 {
+	transform: rotateX(90deg) translateZ(100px);
+}
+.top-3 .point-1 {
+	position: relative;
+	top: 35px;
+}
+.top-3 .point-3 {
+	position: relative;
+	bottom: 35px;
+}
+.bottom-4 {
+	transform: rotateX(-90deg) translateZ(100px);
+}
+.bottom-4 .point {
+	margin: 10px;
+}
+.right-2 {
+	transform: rotateY(90deg) translateZ(100px);
+}
+.right-2 .point {
+	margin: 10px;
+}
+.right-2 .point-1 {
+	position: relative;
+	top: 35px;
+}
+.right-2 .point-2 {
+	position: relative;
+	bottom: 35px;
+}
+.left-5 {
+	transform: rotateY(-90deg) translateZ(100px);
+}
+.left-5 .point {
+	padding: 14px;
+	position: relative;
+	bottom: 12px;
+}
+.left-5 .point-5 {
+	position: absolute;
+	bottom: 60px;
+}
+
+@keyframes spin {
+	from {
+		transform: rotateX(0deg) rotateY(0deg);
+	}
+	to {
+		transform: rotateX(720deg) rotateY(360deg);
+	}
+}
